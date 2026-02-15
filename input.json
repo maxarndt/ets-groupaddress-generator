@@ -18,7 +18,6 @@
       "name": "UG-Bad",
       "light": [
         {
-          "id": "light1",
           "name": "Decke",
           "type": "tunable-white"
         }
@@ -28,7 +27,6 @@
       "name": "UG-Abstellraum",
       "light": [
         {
-          "id": "light1",
           "name": "Decke",
           "type": "tunable-white"
         }
@@ -38,12 +36,10 @@
       "name": "UG-Wohnflur",
       "light": [
         {
-          "id": "light1",
           "name": "Decke",
           "type": "tunable-white"
         },
         {
-          "id": "light2",
           "name": "Stripe Schattenfuge",
           "type": "tunable-white"
         }
@@ -53,7 +49,6 @@
       "name": "UG-Technikflur",
       "light": [
         {
-          "id": "light1",
           "name": "Decke",
           "type": "tunable-white"
         }
@@ -69,36 +64,30 @@
       "name": "UG-Wohnzimmer",
       "light": [
         {
-          "id": "light1",
           "name": "Decke",
           "type": "tunable-white"
         },
         {
-          "id": "light2",
           "name": "Stripe Sofa",
           "type": "tunable-white"
         }
       ],
       "shading": [
         {
-          "id": "shading3",
           "name": "Raffstore Ost",
           "type": "raffstore"
         },
         {
-          "id": "shading1",
           "name": "Raffstore Süd",
           "type": "raffstore"
         },
         {
-          "id": "shading2",
           "name": "Raffstore Nord",
           "type": "raffstore"
         }
       ],
       "clima": [
         {
-          "id": "clima1",
           "name": "FBH",
           "type": "heating"
         }

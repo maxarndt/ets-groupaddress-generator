@@ -16,7 +16,6 @@ type Trade struct {
 }
 
 type Object struct {
-	ID   string `json:"id"`
 	Name string `json:"name"`
 	Type string `json:"type"`
 }
@@ -81,7 +80,7 @@ func main() {
 	}
 
 	// 3. Process
-	export, err := GenerateExport(input, objTypes)
+	export, err := GenerateExport(input, objTypes, includeDPTs)
 	if err != nil {
 		log.Fatalf("Error generating export: %v", err)
 	}
@@ -101,7 +100,7 @@ func main() {
 	}
 }
 
-func GenerateExport(input Input, objTypes ObjectTypes) (GroupAddressExport, error) {
+func GenerateExport(input Input, objTypes ObjectTypes, includeDPT bool) (GroupAddressExport, error) {
 	export := GroupAddressExport{
 		XMLNS: "http://knx.org/xml/ga-export/01",
 	}
@@ -163,7 +162,7 @@ func GenerateExport(input Input, objTypes ObjectTypes) (GroupAddressExport, erro
 						Name:    gaName,
 						Address: gaAddress,
 					}
-					if includeDPTs {
+					if includeDPT {
 						ga.DPT = fn.DPT
 					}
 
