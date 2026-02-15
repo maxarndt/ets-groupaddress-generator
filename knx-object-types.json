@@ -20,22 +20,36 @@
       "reserved_addresses": 10,
       "functions": [
         { "name": "fahren", "dpt": "DPST-1-8" },
-        { "name": "stop", "dpt": "DPST-1-7" },
+        { "name": "stop/schritt", "dpt": "DPST-1-7" },
         { "name": "Position absolut", "dpt": "DPST-5-1" },
         { "name": "Status Position", "dpt": "DPST-5-1" },
-        { "name": "Lamellenposition", "dpt": "DPST-5-1" }
+        { "name": "Lamellenposition", "dpt": "DPST-5-1" },
+        { "name": "Status Lamellenposition", "dpt": "DPST-5-1" }
+      ]
+    },
+    "shutter": {
+      "reserved_addresses": 10,
+      "functions": [
+        { "name": "fahren", "dpt": "DPST-1-8" },
+        { "name": "stop/schritt", "dpt": "DPST-1-7" },
+        { "name": "Position absolut", "dpt": "DPST-5-1" },
+        { "name": "Status Position", "dpt": "DPST-5-1" }
       ]
     }
   },
   "clima": {
     "heating": {
-      "reserved_addresses": 10,
+      "reserved_addresses": 12,
       "functions": [
-        { "name": "schalten", "dpt": "DPST-1-1" },
-        { "name": "Status Ein/Aus", "dpt": "DPST-1-1" },
-        { "name": "Soll-Temperatur relativ", "dpt": "DPST-1-7" },
+        { "name": "Stellgröße", "dpt": "DPST-5-1" },
+        { "name": "Status Stellgröße", "dpt": "DPST-5-1" },
         { "name": "Soll-Temperatur absolut", "dpt": "DPST-9-1" },
-        { "name": "Status Soll-Temperatur", "dpt": "DPST-9-1" }
+        { "name": "Status Soll-Temperatur", "dpt": "DPST-9-1" },
+        { "name": "Sollwertverschiebung", "dpt": "DPST-9-1" },
+        { "name": "Ist-Temperatur", "dpt": "DPST-9-1" },
+        { "name": "Betriebsart", "dpt": "DPST-20-102" },
+        { "name": "Status Betriebsart", "dpt": "DPST-20-102" },
+        { "name": "Meldung Heizen", "dpt": "DPST-1-1" }
       ]
     }
   }

@@ -8,6 +8,8 @@ import (
 	"os"
 )
 
+var includeDPTs = false
+
 type Trade struct {
 	ID   string `json:"id"`
 	Name string `json:"name"`
@@ -157,11 +159,15 @@ func GenerateExport(input Input, objTypes ObjectTypes) (GroupAddressExport, erro
 					gaName := fmt.Sprintf("%s_%s_%s-%s", roomName, trade.Name, obj.Name, fn.Name)
 					gaAddress := fmt.Sprintf("%d/%d/%d", mainGroupIndex, middleGroupIndex, currentIndex)
 
-					middleGroup.GroupAddresses = append(middleGroup.GroupAddresses, GroupAddress{
+					ga := GroupAddress{
 						Name:    gaName,
 						Address: gaAddress,
-						DPT:     fn.DPT,
-					})
+					}
+					if includeDPTs {
+						ga.DPT = fn.DPT
+					}
+
+					middleGroup.GroupAddresses = append(middleGroup.GroupAddresses, ga)
 				}
 				// Advance subGroupIndex by reserved amount to keep "slots" fixed
 				subGroupIndex += typeDef.ReservedAddresses
