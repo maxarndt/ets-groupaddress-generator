@@ -6,10 +6,10 @@ import (
 
 func TestGenerateExport_Success(t *testing.T) {
 	input := Input{
-		Gewerke: []Gewerk{
+		Trades: []Trade{
 			{ID: "light", Name: "Licht"},
 		},
-		Raeume: []map[string]interface{}{
+		Rooms: []map[string]interface{}{
 			{
 				"name": "Wohnzimmer",
 				"light": []interface{}{
@@ -70,10 +70,10 @@ func TestGenerateExport_Success(t *testing.T) {
 
 func TestGenerateExport_MissingType(t *testing.T) {
 	input := Input{
-		Gewerke: []Gewerk{
+		Trades: []Trade{
 			{ID: "light", Name: "Licht"},
 		},
-		Raeume: []map[string]interface{}{
+		Rooms: []map[string]interface{}{
 			{
 				"name": "Wohnzimmer",
 				"light": []interface{}{

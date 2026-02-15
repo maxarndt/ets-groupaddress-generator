@@ -8,7 +8,7 @@ import (
 	"os"
 )
 
-type Gewerk struct {
+type Trade struct {
 	ID   string `json:"id"`
 	Name string `json:"name"`
 }
@@ -20,8 +20,8 @@ type Object struct {
 }
 
 type Input struct {
-	Gewerke []Gewerk                 `json:"gewerke"`
-	Raeume  []map[string]interface{} `json:"raeume"`
+	Trades []Trade                  `json:"trades"`
+	Rooms  []map[string]interface{} `json:"rooms"`
 }
 
 type ObjectTypes map[string]map[string][]string
@@ -103,7 +103,7 @@ func GenerateExport(input Input, objTypes ObjectTypes) (GroupAddressExport, erro
 	}
 
 	// Process rooms
-	for _, roomMap := range input.Raeume {
+	for _, roomMap := range input.Rooms {
 		roomName, ok := roomMap["name"].(string)
 		if !ok {
 			continue
@@ -112,8 +112,8 @@ func GenerateExport(input Input, objTypes ObjectTypes) (GroupAddressExport, erro
 		mainGroup := createMainGroup(roomName, mainGroupIndex)
 
 		middleGroupIndex := 0
-		for _, gewerk := range input.Gewerke {
-			objectsRaw, ok := roomMap[gewerk.ID]
+		for _, trade := range input.Trades {
+			objectsRaw, ok := roomMap[trade.ID]
 			if !ok {
 				continue
 			}
@@ -127,22 +127,22 @@ func GenerateExport(input Input, objTypes ObjectTypes) (GroupAddressExport, erro
 				continue
 			}
 
-			middleGroup := createMiddleGroup(gewerk.Name, mainGroupIndex, middleGroupIndex)
+			middleGroup := createMiddleGroup(trade.Name, mainGroupIndex, middleGroupIndex)
 			subGroupIndex := 0
 
 			for _, obj := range objects {
 				// Get functions for this type
-				functions, found := objTypes[gewerk.ID][obj.Type]
+				functions, found := objTypes[trade.ID][obj.Type]
 				if !found {
-					return GroupAddressExport{}, fmt.Errorf("type '%s' for gewerk '%s' not found in knx-object-types.json", obj.Type, gewerk.ID)
+					return GroupAddressExport{}, fmt.Errorf("type '%s' for trade '%s' not found in knx-object-types.json", obj.Type, trade.ID)
 				}
 
 				for _, fn := range functions {
 					if subGroupIndex > 255 {
-						return GroupAddressExport{}, fmt.Errorf("too many group addresses in middle group %s/%s", roomName, gewerk.Name)
+						return GroupAddressExport{}, fmt.Errorf("too many group addresses in middle group %s/%s", roomName, trade.Name)
 					}
 
-					gaName := fmt.Sprintf("%s_%s_%s-%s", roomName, gewerk.Name, obj.Name, fn)
+					gaName := fmt.Sprintf("%s_%s_%s-%s", roomName, trade.Name, obj.Name, fn)
 					gaAddress := fmt.Sprintf("%d/%d/%d", mainGroupIndex, middleGroupIndex, subGroupIndex)
 
 					middleGroup.GroupAddresses = append(middleGroup.GroupAddresses, GroupAddress{

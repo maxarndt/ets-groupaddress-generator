@@ -1,5 +1,5 @@
 {
-  "gewerke": [
+  "trades": [
     {
       "id": "light",
       "name": "Licht"
@@ -13,7 +13,7 @@
       "name": "Heizung"
     }
   ],
-  "raeume": [
+  "rooms": [
     {
       "name": "UG-Wohnzimmer",
       "light": [
@@ -38,7 +38,7 @@
       "clima": [
         {
           "id": "clima1",
-          "name": "Heizung",
+          "name": "FBH",
           "type": "heating"
         }
       ]

@@ -17,12 +17,12 @@ Die Gruppenadressen werden in der ETS genutzt um den KNX Geräten ihre Funktione
 ## Requirements
 
 * Die Adressen aller Adressblöcke beginnen mit dem Index `0`.
-* Modelliere die Räume (inkl. Stockwerk) als Hauptgruppen.
+* Modelliere die Räume (Eingabeschlüssel `rooms`, inkl. Stockwerk) als Hauptgruppen.
 * Füge zu den gefundenen Räumen die folgenden zentralen Hauptgruppen hinzu:
    * Zentral
    * UG-Zentral
    * EG-Zentral
-* Modelliere die Gewerke als Mittelgruppe für die Räume. Die zentralen Hauptgruppen benötigen keine Mittelgruppen.
+* Modelliere die Gewerke (Eingabeschlüssel `trades`) als Mittelgruppe für die Räume. Die zentralen Hauptgruppen benötigen keine Mittelgruppen.
 * Entnehme die Gewerke aus der Eingabedatei.
 * Die Objekte eines Gewerks haben immer einen `type`. Dieser bestimmt, welche Gruppenadressen für dieses Objekt notwendig sind. Die Objekte und deren `type` befinden sich ebenfalls in der Eingabedatei.
 * Das Feld `type` eines Objekts lässt sich mit der Datei `knx-object-types.json` auflösen. Hierin sind die Funktionen definiert, die ein KNX Objekt eines gewissen Types benötigt.
