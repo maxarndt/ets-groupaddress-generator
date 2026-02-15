@@ -1,0 +1,53 @@
+{
+  "gewerke": [
+    {
+      "id": "light",
+      "name": "Licht"
+    },
+    {
+      "id": "shading",
+      "name": "Beschattung"
+    },
+    {
+      "id": "clima",
+      "name": "Heizung"
+    }
+  ],
+  "raeume": [
+    {
+      "name": "UG-Wohnzimmer",
+      "light": [
+        {
+          "id": "light1",
+          "name": "Decke",
+          "type": "tunable-white"
+        },
+        {
+          "id": "light2",
+          "name": "Stripe Sofa",
+          "type": "tunable-white"
+        }
+      ],
+      "shading": [
+        {
+          "id": "shading1",
+          "name": "Raffstore",
+          "type": "raffstore"
+        }
+      ],
+      "clima": [
+        {
+          "id": "clima1",
+          "name": "Heizung",
+          "type": "heating"
+        }
+      ]
+    },
+    {
+      "name": "EG-Kind-2"
+    },
+    {
+      "name": "Schlafzimmer"
+    }
+  ]
+}

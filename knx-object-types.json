@@ -1,0 +1,33 @@
+{
+  "light": {
+    "tunable-white": [
+      "schalten",
+      "Status Ein/Aus",
+      "dimmen relativ",
+      "dimmen absolut",
+      "Helligkeit",
+      "Status Helligkeit",
+      "Farbtemperatur relativ",
+      "Farbtemperatur absolut",
+      "Status Farbtemperatur"
+    ]
+  },
+  "shading": {
+    "raffstore": [
+      "fahren",
+      "stop",
+      "Position absolut",
+      "Status Position",
+      "Lamellenposition"
+    ]
+  },
+  "clima": {
+    "heating": [
+      "schalten",
+      "Status Ein/Aus",
+      "Soll-Temperatur relativ",
+      "Soll-Temperatur absolut",
+      "Status Soll-Temperatur"
+    ]
+  }
+}

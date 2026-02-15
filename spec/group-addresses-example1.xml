@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<GroupAddress-Export xmlns="http://knx.org/xml/ga-export/01">
+  <GroupRange Name="Zentral" RangeStart="1" RangeEnd="2047" />
+  <GroupRange Name="UG-Zentral" RangeStart="2048" RangeEnd="4095" />
+  <GroupRange Name="EG-Zentral" RangeStart="4096" RangeEnd="6143" />
+  <GroupRange Name="UG-Wohnzimmer" RangeStart="6144" RangeEnd="8191">
+    <GroupRange Name="Licht" RangeStart="6144" RangeEnd="6399">
+      <GroupAddress Name="UG-Wohnzimmer_Licht_Decke-schalten" Address="3/0/0" />
+    </GroupRange>
+    <GroupRange Name="Beschattung" RangeStart="6400" RangeEnd="6655" />
+  </GroupRange>
+  <GroupRange Name="EG-Kind-2" RangeStart="8192" RangeEnd="10239" />
+</GroupAddress-Export>
