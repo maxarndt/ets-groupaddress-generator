@@ -15,6 +15,57 @@
   ],
   "rooms": [
     {
+      "name": "UG-Bad",
+      "light": [
+        {
+          "id": "light1",
+          "name": "Decke",
+          "type": "tunable-white"
+        }
+      ]
+    },
+    {
+      "name": "UG-Abstellraum",
+      "light": [
+        {
+          "id": "light1",
+          "name": "Decke",
+          "type": "tunable-white"
+        }
+      ]
+    },
+    {
+      "name": "UG-Wohnflur",
+      "light": [
+        {
+          "id": "light1",
+          "name": "Decke",
+          "type": "tunable-white"
+        },
+        {
+          "id": "light2",
+          "name": "Stripe Schattenfuge",
+          "type": "tunable-white"
+        }
+      ]
+    },
+    {
+      "name": "UG-Technikflur",
+      "light": [
+        {
+          "id": "light1",
+          "name": "Decke",
+          "type": "tunable-white"
+        }
+      ]
+    },
+    {
+      "name": "UG-Heizungsraum"
+    },
+    {
+      "name": "UG-Technikraum"
+    },
+    {
       "name": "UG-Wohnzimmer",
       "light": [
         {
@@ -54,10 +105,40 @@
       ]
     },
     {
+      "name": "UG-Esszimmer-Küche"
+    },
+    {
+      "name": "EG-Windfang"
+    },
+    {
+      "name": "EG-Diele"
+    },
+    {
+      "name": "EG-Bad"
+    },
+    {
+      "name": "EG-Kind-1"
+    },
+    {
+      "name": "EG-Schlafzimmer"
+    },
+    {
+      "name": "EG-Büro"
+    },
+    {
       "name": "EG-Kind-2"
     },
     {
-      "name": "Schlafzimmer"
+      "name": "Garage"
+    },
+    {
+      "name": "Dachboden"
+    },
+    {
+      "name": "Carport"
+    },
+    {
+      "name": "Gartenhaus"
     }
   ]
 }
