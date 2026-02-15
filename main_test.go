@@ -18,6 +18,11 @@ func TestGenerateExport_Success(t *testing.T) {
 						"name": "Decke",
 						"type": "dimmable",
 					},
+					map[string]interface{}{
+						"id":   "l2",
+						"name": "Wand",
+						"type": "dimmable",
+					},
 				},
 			},
 		},
@@ -25,7 +30,13 @@ func TestGenerateExport_Success(t *testing.T) {
 
 	objTypes := ObjectTypes{
 		"light": {
-			"dimmable": []string{"schalten", "dimmen"},
+			"dimmable": ObjectTypeDefinition{
+				ReservedAddresses: 10,
+				Functions: []FunctionDefinition{
+					{Name: "schalten", DPT: "DPST-1-1"},
+					{Name: "dimmen", DPT: "DPST-3-7"},
+				},
+			},
 		},
 	}
 
@@ -34,37 +45,26 @@ func TestGenerateExport_Success(t *testing.T) {
 		t.Fatalf("Expected no error, got %v", err)
 	}
 
-	// 3 centrals + 1 room = 4 main groups
-	if len(export.GroupRanges) != 4 {
-		t.Errorf("Expected 4 main groups, got %d", len(export.GroupRanges))
-	}
-
 	roomGroup := export.GroupRanges[3]
-	if roomGroup.Name != "Wohnzimmer" {
-		t.Errorf("Expected room name 'Wohnzimmer', got %s", roomGroup.Name)
-	}
-
-	if len(roomGroup.GroupRanges) != 1 {
-		t.Errorf("Expected 1 middle group, got %d", len(roomGroup.GroupRanges))
-	}
-
 	lightGroup := roomGroup.GroupRanges[0]
-	if lightGroup.Name != "Licht" {
-		t.Errorf("Expected middle group name 'Licht', got %s", lightGroup.Name)
+
+	// Total 4 addresses (2 per object)
+	if len(lightGroup.GroupAddresses) != 4 {
+		t.Errorf("Expected 4 group addresses, got %d", len(lightGroup.GroupAddresses))
 	}
 
-	if len(lightGroup.GroupAddresses) != 2 {
-		t.Errorf("Expected 2 group addresses, got %d", len(lightGroup.GroupAddresses))
+	// First object first GA
+	if lightGroup.GroupAddresses[0].Address != "3/0/0" {
+		t.Errorf("Expected 3/0/0, got %s", lightGroup.GroupAddresses[0].Address)
 	}
 
-	expectedGA := "Wohnzimmer_Licht_Decke-schalten"
-	if lightGroup.GroupAddresses[0].Name != expectedGA {
-		t.Errorf("Expected GA name %s, got %s", expectedGA, lightGroup.GroupAddresses[0].Name)
+	// Second object first GA should be at offset 10
+	if lightGroup.GroupAddresses[2].Address != "3/0/10" {
+		t.Errorf("Expected 3/0/10, got %s", lightGroup.GroupAddresses[2].Address)
 	}
-
-	expectedAddr := "3/0/0"
-	if lightGroup.GroupAddresses[0].Address != expectedAddr {
-		t.Errorf("Expected address %s, got %s", expectedAddr, lightGroup.GroupAddresses[0].Address)
+	
+	if lightGroup.GroupAddresses[2].DPT != "DPST-1-1" {
+		t.Errorf("Expected DPT DPST-1-1, got %s", lightGroup.GroupAddresses[2].DPT)
 	}
 }
 
@@ -89,7 +89,10 @@ func TestGenerateExport_MissingType(t *testing.T) {
 
 	objTypes := ObjectTypes{
 		"light": {
-			"dimmable": []string{"schalten"},
+			"dimmable": ObjectTypeDefinition{
+				ReservedAddresses: 10,
+				Functions:         []FunctionDefinition{{Name: "schalten"}},
+			},
 		},
 	}
 

@@ -30,8 +30,18 @@
       ],
       "shading": [
         {
+          "id": "shading3",
+          "name": "Raffstore Ost",
+          "type": "raffstore"
+        },
+        {
           "id": "shading1",
-          "name": "Raffstore",
+          "name": "Raffstore Süd",
+          "type": "raffstore"
+        },
+        {
+          "id": "shading2",
+          "name": "Raffstore Nord",
           "type": "raffstore"
         }
       ],

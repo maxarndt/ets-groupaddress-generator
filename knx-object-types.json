@@ -1,33 +1,42 @@
 {
   "light": {
-    "tunable-white": [
-      "schalten",
-      "Status Ein/Aus",
-      "dimmen relativ",
-      "dimmen absolut",
-      "Helligkeit",
-      "Status Helligkeit",
-      "Farbtemperatur relativ",
-      "Farbtemperatur absolut",
-      "Status Farbtemperatur"
-    ]
+    "tunable-white": {
+      "reserved_addresses": 15,
+      "functions": [
+        { "name": "schalten", "dpt": "DPST-1-1" },
+        { "name": "Status Ein/Aus", "dpt": "DPST-1-1" },
+        { "name": "dimmen relativ", "dpt": "DPST-3-7" },
+        { "name": "dimmen absolut", "dpt": "DPST-5-1" },
+        { "name": "Helligkeit", "dpt": "DPST-5-1" },
+        { "name": "Status Helligkeit", "dpt": "DPST-5-1" },
+        { "name": "Farbtemperatur relativ", "dpt": "DPST-3-7" },
+        { "name": "Farbtemperatur absolut", "dpt": "DPST-7-600" },
+        { "name": "Status Farbtemperatur", "dpt": "DPST-7-600" }
+      ]
+    }
   },
   "shading": {
-    "raffstore": [
-      "fahren",
-      "stop",
-      "Position absolut",
-      "Status Position",
-      "Lamellenposition"
-    ]
+    "raffstore": {
+      "reserved_addresses": 10,
+      "functions": [
+        { "name": "fahren", "dpt": "DPST-1-8" },
+        { "name": "stop", "dpt": "DPST-1-7" },
+        { "name": "Position absolut", "dpt": "DPST-5-1" },
+        { "name": "Status Position", "dpt": "DPST-5-1" },
+        { "name": "Lamellenposition", "dpt": "DPST-5-1" }
+      ]
+    }
   },
   "clima": {
-    "heating": [
-      "schalten",
-      "Status Ein/Aus",
-      "Soll-Temperatur relativ",
-      "Soll-Temperatur absolut",
-      "Status Soll-Temperatur"
-    ]
+    "heating": {
+      "reserved_addresses": 10,
+      "functions": [
+        { "name": "schalten", "dpt": "DPST-1-1" },
+        { "name": "Status Ein/Aus", "dpt": "DPST-1-1" },
+        { "name": "Soll-Temperatur relativ", "dpt": "DPST-1-7" },
+        { "name": "Soll-Temperatur absolut", "dpt": "DPST-9-1" },
+        { "name": "Status Soll-Temperatur", "dpt": "DPST-9-1" }
+      ]
+    }
   }
 }

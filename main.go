@@ -24,7 +24,17 @@ type Input struct {
 	Rooms  []map[string]interface{} `json:"rooms"`
 }
 
-type ObjectTypes map[string]map[string][]string
+type FunctionDefinition struct {
+	Name string `json:"name"`
+	DPT  string `json:"dpt"`
+}
+
+type ObjectTypeDefinition struct {
+	ReservedAddresses int                  `json:"reserved_addresses"`
+	Functions         []FunctionDefinition `json:"functions"`
+}
+
+type ObjectTypes map[string]map[string]ObjectTypeDefinition
 
 // XML structures
 type GroupAddressExport struct {
@@ -44,6 +54,7 @@ type GroupRange struct {
 type GroupAddress struct {
 	Name    string `xml:"Name,attr"`
 	Address string `xml:"Address,attr"`
+	DPT     string `xml:"DPTs,attr,omitempty"`
 }
 
 func main() {
@@ -132,25 +143,28 @@ func GenerateExport(input Input, objTypes ObjectTypes) (GroupAddressExport, erro
 
 			for _, obj := range objects {
 				// Get functions for this type
-				functions, found := objTypes[trade.ID][obj.Type]
+				typeDef, found := objTypes[trade.ID][obj.Type]
 				if !found {
 					return GroupAddressExport{}, fmt.Errorf("type '%s' for trade '%s' not found in knx-object-types.json", obj.Type, trade.ID)
 				}
 
-				for _, fn := range functions {
-					if subGroupIndex > 255 {
+				for i, fn := range typeDef.Functions {
+					currentIndex := subGroupIndex + i
+					if currentIndex > 255 {
 						return GroupAddressExport{}, fmt.Errorf("too many group addresses in middle group %s/%s", roomName, trade.Name)
 					}
 
-					gaName := fmt.Sprintf("%s_%s_%s-%s", roomName, trade.Name, obj.Name, fn)
-					gaAddress := fmt.Sprintf("%d/%d/%d", mainGroupIndex, middleGroupIndex, subGroupIndex)
+					gaName := fmt.Sprintf("%s_%s_%s-%s", roomName, trade.Name, obj.Name, fn.Name)
+					gaAddress := fmt.Sprintf("%d/%d/%d", mainGroupIndex, middleGroupIndex, currentIndex)
 
 					middleGroup.GroupAddresses = append(middleGroup.GroupAddresses, GroupAddress{
 						Name:    gaName,
 						Address: gaAddress,
+						DPT:     fn.DPT,
 					})
-					subGroupIndex++
 				}
+				// Advance subGroupIndex by reserved amount to keep "slots" fixed
+				subGroupIndex += typeDef.ReservedAddresses
 			}
 
 			mainGroup.GroupRanges = append(mainGroup.GroupRanges, middleGroup)

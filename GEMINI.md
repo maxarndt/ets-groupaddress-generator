@@ -20,6 +20,7 @@ This file provides the operational context for Gemini. For detailed business log
 - **Test:** `go test ./...`
 
 ## Development Guidelines
+- **Tests:** Always update or add tests when making code changes to ensure continued reliability.
 - **Logic:** Adhere strictly to the rules defined in `spec/01-main.md`.
 - **Error Handling:** Terminate execution if a device type is not found in `knx-object-types.json`.
 - **Conventions:** Follow standard Go idioms. Use `output.xml` as the default output file name.
