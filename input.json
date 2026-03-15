@@ -24,7 +24,7 @@
       ]
     },
     {
-      "name": "UG-Abstellraum",
+      "name": "UG-Vorratsraum",
       "light": [
         {
           "name": "Decke",
@@ -58,7 +58,13 @@
       "name": "UG-Heizungsraum"
     },
     {
-      "name": "UG-Technikraum"
+      "name": "UG-Technikraum",
+      "light": [
+        {
+          "name": "Decke",
+          "type": "tunable-white"
+        }
+      ]
     },
     {
       "name": "UG-Wohnzimmer",
@@ -70,19 +76,15 @@
         {
           "name": "Stripe Sofa",
           "type": "tunable-white"
+        },
+        {
+          "name": "Stripe TV",
+          "type": "tunable-white"
         }
       ],
       "shading": [
         {
-          "name": "Raffstore Ost",
-          "type": "raffstore"
-        },
-        {
-          "name": "Raffstore Süd",
-          "type": "raffstore"
-        },
-        {
-          "name": "Raffstore Nord",
+          "name": "Raffstore",
           "type": "raffstore"
         }
       ],
@@ -94,28 +96,127 @@
       ]
     },
     {
-      "name": "UG-Esszimmer-Küche"
+      "name": "UG-Esszimmer-Küche",
+      "light": [
+        {
+          "name": "Decke Küche",
+          "type": "tunable-white"
+        },
+        {
+          "name": "Decke Treppenaufgang",
+          "type": "tunable-white"
+        },
+        {
+          "name": "Decke Terassentür",
+          "type": "tunable-white"
+        },
+        {
+          "name": "Decke Esstisch",
+          "type": "tunable-white"
+        }
+      ],
+      "shading": [
+        {
+          "name": "Raffstore Fenster",
+          "type": "raffstore"
+        },
+        {
+          "name": "Raffstore Terassentür",
+          "type": "raffstore"
+        }
+      ]
     },
     {
-      "name": "EG-Windfang"
+      "name": "EG-Windfang",
+      "light": [
+        {
+          "name": "Decke",
+          "type": "tunable-white"
+        },
+        {
+          "name": "Stripe Garderobe",
+          "type": "tunable-white"
+        }
+      ]
     },
     {
-      "name": "EG-Diele"
+      "name": "EG-Diele",
+      "light": [
+        {
+          "name": "Decke",
+          "type": "tunable-white"
+        },
+        {
+          "name": "Stripe Schattenfuge",
+          "type": "tunable-white"
+        },
+        {
+          "name": "Decke kleiner Flur",
+          "type": "tunable-white"
+        }
+      ]
     },
     {
-      "name": "EG-Bad"
+      "name": "EG-Bad",
+      "light": [
+        {
+          "name": "Decke",
+          "type": "tunable-white"
+        }
+      ]
     },
     {
-      "name": "EG-Kind-1"
+      "name": "EG-Kind-1",
+      "light": [
+        {
+          "name": "Decke",
+          "type": "tunable-white"
+        },
+        {
+          "name": "Stripe TV",
+          "type": "tunable-white"
+        }
+      ]
     },
     {
-      "name": "EG-Schlafzimmer"
+      "name": "EG-Schlafzimmer",
+      "light": [
+        {
+          "name": "Decke",
+          "type": "tunable-white"
+        }
+      ]
     },
     {
-      "name": "EG-Büro"
+      "name": "EG-Büro",
+      "light": [
+        {
+          "name": "Decke",
+          "type": "tunable-white"
+        }
+      ]
     },
     {
-      "name": "EG-Kind-2"
+      "name": "EG-Kind-2",
+      "light": [
+        {
+          "name": "Decke",
+          "type": "tunable-white"
+        },
+        {
+          "name": "Stripe TV",
+          "type": "tunable-white"
+        }
+      ]
+    },
+    {
+      "name": "Treppenabgang",
+      "light": [
+        {
+          "name": "Decke",
+          "type": "tunable-white"
+        }
+      ]
     },
     {
       "name": "Garage"

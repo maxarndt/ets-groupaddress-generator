@@ -9,7 +9,7 @@
         { "name": "dimmen absolut", "dpt": "DPST-5-1" },
         { "name": "Helligkeit", "dpt": "DPST-5-1" },
         { "name": "Status Helligkeit", "dpt": "DPST-5-1" },
-        { "name": "Farbtemperatur relativ", "dpt": "DPST-3-7" },
+        { "name": "HCL aktiv" },
         { "name": "Farbtemperatur absolut", "dpt": "DPST-7-600" },
         { "name": "Status Farbtemperatur", "dpt": "DPST-7-600" }
       ]
@@ -24,11 +24,12 @@
         { "name": "Position absolut", "dpt": "DPST-5-1" },
         { "name": "Status Position", "dpt": "DPST-5-1" },
         { "name": "Lamellenposition", "dpt": "DPST-5-1" },
-        { "name": "Status Lamellenposition", "dpt": "DPST-5-1" }
+        { "name": "Status Lamellenposition", "dpt": "DPST-5-1" },
+        { "name": "Fahrzeitmessung" }
       ]
     },
     "shutter": {
-      "reserved_addresses": 10,
+      "reserved_addresses": 8,
       "functions": [
         { "name": "fahren", "dpt": "DPST-1-8" },
         { "name": "stop/schritt", "dpt": "DPST-1-7" },
