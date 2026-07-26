@@ -13,6 +13,13 @@
         { "name": "Farbtemperatur absolut", "dpt": "DPST-7-600" },
         { "name": "Status Farbtemperatur", "dpt": "DPST-7-600" }
       ]
+    },
+    "230v": {
+      "reserved_addresses": 5,
+      "functions": [
+        { "name": "schalten", "dpt": "DPST-1-1" },
+        { "name": "Status Ein/Aus", "dpt": "DPST-1-1" }
+      ]
     }
   },
   "shading": {
@@ -25,7 +32,8 @@
         { "name": "Status Position", "dpt": "DPST-5-1" },
         { "name": "Lamellenposition", "dpt": "DPST-5-1" },
         { "name": "Status Lamellenposition", "dpt": "DPST-5-1" },
-        { "name": "Fahrzeitmessung" }
+        { "name": "Fahrzeitmessung" },
+        { "name": "Status aktuelle Richtung" }
       ]
     },
     "shutter": {
@@ -34,7 +42,9 @@
         { "name": "fahren", "dpt": "DPST-1-8" },
         { "name": "stop/schritt", "dpt": "DPST-1-7" },
         { "name": "Position absolut", "dpt": "DPST-5-1" },
-        { "name": "Status Position", "dpt": "DPST-5-1" }
+        { "name": "Status Position", "dpt": "DPST-5-1" },
+        { "name": "Fahrzeitmessung" },
+        { "name": "Status aktuelle Richtung" }
       ]
     }
   },
