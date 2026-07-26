@@ -63,6 +63,10 @@
         {
           "name": "Decke",
           "type": "tunable-white"
+        },
+        {
+          "name": "Decke Notbeleuchtung",
+          "type": "230v"
         }
       ]
     },
@@ -182,7 +186,11 @@
       "name": "EG-Schlafzimmer",
       "light": [
         {
-          "name": "Decke",
+          "name": "Decke Bett",
+          "type": "tunable-white"
+        },
+        {
+          "name": "Decke Schrank",
           "type": "tunable-white"
         }
       ]
