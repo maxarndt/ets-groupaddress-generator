@@ -10,7 +10,7 @@
     },
     {
       "id": "clima",
-      "name": "Heizung"
+      "name": "Klima"
     }
   ],
   "rooms": [
@@ -21,6 +21,15 @@
           "name": "Decke",
           "type": "tunable-white"
         }
+      ],
+      "clima": [
+        {
+          "type": "general"
+        },
+        {
+          "name": "FBH",
+          "type": "heating"
+        }
       ]
     },
     {
@@ -29,6 +38,15 @@
         {
           "name": "Decke",
           "type": "tunable-white"
+        }
+      ],
+      "clima": [
+        {
+          "type": "general"
+        },
+        {
+          "name": "FBH",
+          "type": "heating"
         }
       ]
     },
@@ -43,6 +61,15 @@
           "name": "Stripe Schattenfuge",
           "type": "tunable-white"
         }
+      ],
+      "clima": [
+        {
+          "type": "general"
+        },
+        {
+          "name": "FBH",
+          "type": "heating"
+        }
       ]
     },
     {
@@ -51,6 +78,15 @@
         {
           "name": "Decke",
           "type": "tunable-white"
+        }
+      ],
+      "clima": [
+        {
+          "type": "general"
+        },
+        {
+          "name": "FBH",
+          "type": "heating"
         }
       ]
     },
@@ -94,6 +130,9 @@
       ],
       "clima": [
         {
+          "type": "general"
+        },
+        {
           "name": "FBH",
           "type": "heating"
         }
@@ -119,6 +158,15 @@
           "type": "tunable-white"
         }
       ],
+      "clima": [
+        {
+          "type": "general"
+        },
+        {
+          "name": "FBH",
+          "type": "heating"
+        }
+      ],
       "shading": [
         {
           "name": "Raffstore Fenster",
@@ -141,6 +189,15 @@
           "name": "Stripe Garderobe",
           "type": "tunable-white"
         }
+      ],
+      "clima": [
+        {
+          "type": "general"
+        },
+        {
+          "name": "FBH",
+          "type": "heating"
+        }
       ]
     },
     {
@@ -158,6 +215,15 @@
           "name": "Decke kleiner Flur",
           "type": "tunable-white"
         }
+      ],
+      "clima": [
+        {
+          "type": "general"
+        },
+        {
+          "name": "FBH",
+          "type": "heating"
+        }
       ]
     },
     {
@@ -166,6 +232,15 @@
         {
           "name": "Decke",
           "type": "tunable-white"
+        }
+      ],
+      "clima": [
+        {
+          "type": "general"
+        },
+        {
+          "name": "FBH",
+          "type": "heating"
         }
       ]
     },
@@ -180,6 +255,15 @@
           "name": "Stripe TV",
           "type": "tunable-white"
         }
+      ],
+      "clima": [
+        {
+          "type": "general"
+        },
+        {
+          "name": "FBH",
+          "type": "heating"
+        }
       ]
     },
     {
@@ -193,6 +277,15 @@
           "name": "Decke Schrank",
           "type": "tunable-white"
         }
+      ],
+      "clima": [
+        {
+          "type": "general"
+        },
+        {
+          "name": "FBH",
+          "type": "heating"
+        }
       ]
     },
     {
@@ -201,6 +294,15 @@
         {
           "name": "Decke",
           "type": "tunable-white"
+        }
+      ],
+      "clima": [
+        {
+          "type": "general"
+        },
+        {
+          "name": "FBH",
+          "type": "heating"
         }
       ]
     },
@@ -214,6 +316,15 @@
         {
           "name": "Stripe TV",
           "type": "tunable-white"
+        }
+      ],
+      "clima": [
+        {
+          "type": "general"
+        },
+        {
+          "name": "FBH",
+          "type": "heating"
         }
       ]
     },

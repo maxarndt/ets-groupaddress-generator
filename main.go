@@ -123,8 +123,7 @@ func GenerateExport(input Input, objTypes ObjectTypes, includeDPT bool) (GroupAd
 
 		mainGroup := createMainGroup(roomName, mainGroupIndex)
 
-		middleGroupIndex := 0
-		for _, trade := range input.Trades {
+		for middleGroupIndex, trade := range input.Trades {
 			objectsRaw, ok := roomMap[trade.ID]
 			if !ok {
 				continue
@@ -155,7 +154,10 @@ func GenerateExport(input Input, objTypes ObjectTypes, includeDPT bool) (GroupAd
 						return GroupAddressExport{}, fmt.Errorf("too many group addresses in middle group %s/%s", roomName, trade.Name)
 					}
 
-					gaName := fmt.Sprintf("%s_%s_%s-%s", roomName, trade.Name, obj.Name, fn.Name)
+					gaName := fmt.Sprintf("%s_%s-%s", roomName, trade.Name, fn.Name)
+					if obj.Name != "" {
+						gaName = fmt.Sprintf("%s_%s_%s-%s", roomName, trade.Name, obj.Name, fn.Name)
+					}
 					gaAddress := fmt.Sprintf("%d/%d/%d", mainGroupIndex, middleGroupIndex, currentIndex)
 
 					ga := GroupAddress{
@@ -173,7 +175,6 @@ func GenerateExport(input Input, objTypes ObjectTypes, includeDPT bool) (GroupAd
 			}
 
 			mainGroup.GroupRanges = append(mainGroup.GroupRanges, middleGroup)
-			middleGroupIndex++
 		}
 
 		export.GroupRanges = append(export.GroupRanges, mainGroup)

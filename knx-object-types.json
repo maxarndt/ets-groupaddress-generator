@@ -49,18 +49,19 @@
     }
   },
   "clima": {
-    "heating": {
-      "reserved_addresses": 12,
+    "general": {
+      "reserved_addresses": 8,
       "functions": [
-        { "name": "Stellgröße", "dpt": "DPST-5-1" },
-        { "name": "Status Stellgröße", "dpt": "DPST-5-1" },
-        { "name": "Soll-Temperatur absolut", "dpt": "DPST-9-1" },
+        { "name": "Ist-Temperatur", "dpt": "DPST-9-1" }
+      ]
+    },
+    "heating": {
+      "reserved_addresses": 8,
+      "functions": [
+        { "name": "Soll-Temperatur", "dpt": "DPST-9-1" },
         { "name": "Status Soll-Temperatur", "dpt": "DPST-9-1" },
-        { "name": "Sollwertverschiebung", "dpt": "DPST-9-1" },
-        { "name": "Ist-Temperatur", "dpt": "DPST-9-1" },
-        { "name": "Betriebsart", "dpt": "DPST-20-102" },
-        { "name": "Status Betriebsart", "dpt": "DPST-20-102" },
-        { "name": "Meldung Heizen", "dpt": "DPST-1-1" }
+        { "name": "Status Stellgroesse", "dpt": "DPST-5-1" },
+        { "name": "Status Heizen", "dpt": "DPST-1-1" }
       ]
     }
   }
