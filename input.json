@@ -20,6 +20,10 @@
         {
           "name": "Decke",
           "type": "tunable-white"
+        },
+        {
+          "name": "Spiegelschrank",
+          "type": "230v"
         }
       ],
       "clima": [
@@ -232,6 +236,10 @@
         {
           "name": "Decke",
           "type": "tunable-white"
+        },
+        {
+          "name": "Spiegelschrank",
+          "type": "230v"
         }
       ],
       "clima": [
