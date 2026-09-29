@@ -95,7 +95,13 @@
       ]
     },
     {
-      "name": "UG-Heizungsraum"
+      "name": "UG-Heizungsraum",
+      "light": [
+        {
+          "name": "Decke",
+          "type": "230v"
+        }
+      ]
     },
     {
       "name": "UG-Technikraum",
